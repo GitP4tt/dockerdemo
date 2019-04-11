@@ -4,7 +4,8 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class ProfessorenverwaltungStorage
         extends ConcurrentHashMap<String, Professor> {
-    private static ProfessorenverwaltungStorage instance = null; // Singleton
+    private static ProfessorenverwaltungStorage instance = new ProfessorenverwaltungStorage(); // Singleton
+
 
     private ProfessorenverwaltungStorage() {
         this.put("GRM", new Professor("Gröschel", "Michael", "GRM"));
@@ -14,9 +15,6 @@ public class ProfessorenverwaltungStorage
     }
 
     public static ProfessorenverwaltungStorage getInstance() {
-        if (instance == null) {
-            instance = new ProfessorenverwaltungStorage();
-        }
         return instance;
     }
 }
