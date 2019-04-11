@@ -44,5 +44,4 @@ public class ProfessorController {
     public void delete(@PathVariable String id) {
         professoren.remove(id);
     }
-    s
 }
